@@ -1,28 +1,13 @@
 package org.foodtruckService.info.service;
 
 import org.foodtruckService.info.model.DistanceUnit;
-
-import java.util.*;
+import org.springframework.stereotype.Service;
 import java.lang.*;
-import java.io.*;
 
+@Service
 class GeoDesicDistanceCalculator{
 
-    private static GeoDesicDistanceCalculator geoDesicDistanceCalculator;
-    private GeoDesicDistanceCalculator(){
-    }
-    public static GeoDesicDistanceCalculator getInstance(){
-        if(geoDesicDistanceCalculator == null){
-            synchronized (GeoDesicDistanceCalculator.class){
-                if(geoDesicDistanceCalculator == null){
-                    geoDesicDistanceCalculator = new GeoDesicDistanceCalculator();
-                }
-            }
-        }
-        return geoDesicDistanceCalculator;
-    }
-
-    static double distance(double lat1, double lon1, double lat2, double lon2, DistanceUnit unit) {
+    double distance(double lat1, double lon1, double lat2, double lon2, DistanceUnit unit) {
         if ((lat1 == lat2) && (lon1 == lon2)) {
             return 0;
         }

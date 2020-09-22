@@ -8,7 +8,7 @@ public enum DistanceUnit {
     ;
 
 
-    private String stringValue;
+    private final String stringValue;
 
     DistanceUnit(String stringValue) {
 
